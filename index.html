@@ -4,13 +4,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/styles.css">
+    <!-- AOS SCROLL LIBRARY -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Fiber</title>
 </head>
 <body>
     
     <section class="hero-con">
-    <section class="nav">
-        <div class="nav-bar">
+    <!-- <section class="nav">
+        <div class="nav-bar topnav" id="myTopnav">
             <h2 class="logo">Fiber</h2>
             <div class="nav-items">
                 <p class="nav-item">Community</p>
@@ -21,8 +24,41 @@
                 <p class="sign-in">Sign In</p>
                 <button class="sign-up"><a href="signUp.html">Sign Up</a></button>
             </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <img src="Assets/Hamburger Menu.svg" alt="">
+            </a>
         </div>
-    </section>
+    </section> -->
+
+
+      <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Fiber</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="color: black;">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signUp.html" class="nav-link sign-up" style="color: white;">Sign up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+
 
     <section>
         <div class="hero">
@@ -73,17 +109,17 @@
                 <h2>A good portfolio means good <br> employability.</h2>
             </div>
             <div class="features">
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-left">
                     <img src="Assets/time.svg" alt="">
                     <p class="feature-title">Build in minutes</p>
                     <p class="feature-description">With a selection of premade templates, you cabn build out a portfolio in less than 10 minutes.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-left">
                     <img src="Assets/code.svg" alt="">
                     <p class="feature-title">Add custom css</p>
                     <p class="feature-description">Customize your personal portfolio even more with the ability to add your own custom CSS styles.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-left">
                     <img src="Assets/allSizes.svg" alt="">
                     <p class="feature-title">Responsive</p>
                     <p class="feature-description">All Fiber templates are fully responsive to ensure the experience is seemless across all devices.</p>
@@ -109,7 +145,7 @@
     <section>
         <div class="testimonials">
 
-            <div class="testimonial-item">
+            <div class="testimonial-item" data-aos="fade-right">
                 <div class="profile">
                     <img src="Assets/User Avatar.svg" alt="" class="profile-avatar">
                     <div class="profile-info">
@@ -123,7 +159,7 @@
                 <button class="testimonial-btn">View Sarah's Portfolio</button>
             </div>
 
-            <div class="testimonial-item second-testimonial">
+            <div class="testimonial-item second-testimonial" data-aos="fade-right">
                 <div class="profile">
                     <img src="Assets/User Avatar 2.svg" alt="" class="profile-avatar">
                     <div class="profile-info">
@@ -137,7 +173,7 @@
                 <button class="testimonial-btn">View Mathew's Portfolio</button>
             </div>
 
-            <div class="testimonial-item">
+            <div class="testimonial-item" data-aos="fade-right">
                 <div class="profile">
                     <img src="Assets/User Avatar 32.svg" alt="" class="profile-avatar">
                     <div class="profile-info">
@@ -187,5 +223,34 @@
         </div>
     </footer> 
 
+    <script>
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+    </script>
+
+<!-- AOS SCROLL LIBRARY -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 100,
+  });
+</script>
 </body>
 </html>
